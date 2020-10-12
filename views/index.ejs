@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weathermap API</title>
-</head>
-<body>
-
-    <form action="/meteo" method="post">
-        <input type="text" name="ville" placeholder="entre ta ville">
-        <button type="submit">renvoyer la ville</button>
-    </form>
+    <%- include('head') -%>
+    <body>
+        <%- include('navbar') -%>
+            
+        
+        <div class="form text-center mt-3 display-4" >
+            <form action="/meteo" method="post">
+                <input class="input" type="text" name="ville" placeholder="entre ta ville">
+                <button class="btn btn-info" type="submit">renvoyer la ville</button>
+            </form>
+        </div>
+            
     <!-- <h1></h1>
     <h2></h2>
     <ul>
@@ -18,6 +19,6 @@
         <li class="temp"></li>
     </ul>
      -->
-    <footer>weathermap api <span></span></footer>
+    <footer class="bottom-fixed">weathermap api <span></span></footer>
 </body>
 </html>

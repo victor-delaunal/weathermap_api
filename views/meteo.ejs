@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Weathermap API</title>
-</head>
-<body>
-    <h1>météo à <%= resp.name  + " - " + resp.sys.country %> </h1>
-    <p>température: <%= resp.main.temp %>°C
-    <br>temp ressentie: <%= resp.main.feels_like %>°C
-    <br>humidité: <%= resp.main.humidity %>%</p>
-    <footer>weathermap api - <span><%= new Date().getFullYear() %></span></footer>
+<%- include('head') -%>
+<body class="bg-teal">
+    <div class="bg-teal">
+        <%- include('navbar') -%>
+        <div class="card w-25">
+            <div class="card-header">
+                <h1 class="card-title">météo à <%= resp.name  + " - " + resp.sys.country %> </h1>
+                
+            </div>
+            <div class="card-content">
+                <img src="" alt="" class="card-img-top">
+            </div>
+            <div class="card-foter">
+                <p>température: <%= resp.main.temp %>°C
+                    <br>temp ressentie: <%= resp.main.feels_like %>°C
+                    <br>humidité: <%= resp.main.humidity %>%</p>
+                    
+                    
+                </div>
+            </div>
+            <footer>weathermap api - <span><%= new Date().getFullYear() %></span></footer>
+
+    </div>
 </body>
 </html>

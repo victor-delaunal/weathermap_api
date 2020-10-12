@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weathermap API</title>
+</head>
+<body>
+    <h1>météo à <%= resp.name  + " - " + resp.sys.country %> </h1>
+    <p>température: <%= resp.main.temp %>°C
+    <br>temp ressentie: <%= resp.main.feels_like %>°C
+    <br>humidité: <%= resp.main.humidity %>%</p>
+    <footer>weathermap api - <span><%= new Date().getFullYear() %></span></footer>
+</body>
+</html>

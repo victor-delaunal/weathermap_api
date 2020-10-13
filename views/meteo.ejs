@@ -10,9 +10,9 @@
                 
             </div>
             <div class="card-content">
-                <img src="" alt="" class="card-img-top">
+                <img src="https://openweathermap.org/img/wn/<%= resp.weather[0].icon %>.png " alt="" class="card-img-top">
             </div>
-            <div class="card-foter">
+            <div class="card-footer">
                 <p>température: <%= resp.main.temp %>°C
                     <br>temp ressentie: <%= resp.main.feels_like %>°C
                     <br>humidité: <%= resp.main.humidity %>%</p>

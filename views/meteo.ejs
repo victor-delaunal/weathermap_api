@@ -5,25 +5,28 @@
    
     <%- include('navbar') -%>
     <!-- <div class="card-deck"> -->
-        <div class="card text-center d-block mx-auto w-25 mt-5">
-            <div class="card-header bg-info">
-                <h1 class="card-title">météo à <%= tab[0].name  + " - " + tab[0].country %> </h1>
+        <% for (card of tab) { %>
+        
+            <div class="card text-center d-block mx-auto w-25 mt-5">
+                <div class="card-header bg-info">
+                    <h1 class="card-title">météo à <%= card.name  + " - " + card.country %> </h1>
+                    
+                </div>
+                <div class="card-content">
+                    <img src="<%= card.icon %> " alt="" class="card-img-top">
+                    <p class="card-text text-right m-2">
+                        desc: <%= card.desc %>
+                    </p>
+                </div>
+                
+                <div class="card-footer text-left bg-info">
+                    <p class="card-text">température: <%= card.temp %>°C
+                        <br>temp ressentie: <%= card.feelsLike %>°C
+                        <br>humidité: <%= card.humidity %>%</p>
+                </div>
                 
             </div>
-            <div class="card-content">
-                <img src="<%= tab[0].icon %> " alt="" class="card-img-top">
-                <p class="card-text text-right m-2">
-                    desc: <%= tab[0].desc %>
-                </p>
-            </div>
-
-            <div class="card-footer text-left bg-info">
-                <p class="card-text">température: <%= tab[0].temp %>°C
-                <br>temp ressentie: <%= tab[0].feelsLike %>°C
-                <br>humidité: <%= tab[0].humidity %>%</p>
-            </div>
-                
-        </div>
+        <% } %>
     <!-- </div> -->
 
     <footer class="fixed-bottom w-100 text-center p-2 opacity-50">

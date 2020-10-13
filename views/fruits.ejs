@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('head') -%>
+    <body>
+        <%- include('navbar') -%>
+            
+        
+        <h1 class="text-center">
+            qui veut des fruits?
+        </h1>
+        
+        <div class="text-center p-2 rounded d-block mx-auto w-25" style="background-color: <%= fruits.bg %>; color: <%= fruits.color %>">
+            <%= fruits.name %> 
+            
+        </div>
+        
+        
+        <div class="container">
+
+            <%- include('footer') -%>
+        </div>
+</body>
+</html>

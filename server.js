@@ -4,10 +4,12 @@ const bodyParser = require('body-parser')
 const ejs = require('ejs')
 
 const app = express()
+const fruitMod = require(__dirname + '/fruit.js')
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.set('view engine', "ejs")
 app.use(express.static("public"))
+
 
 // let thisData
 app.get('/', (req, res) => {
@@ -24,7 +26,10 @@ app.get('/', (req, res) => {
        //         document.querySelector('.temp').textContent = temp
        
        // })
-    })
+})
+app.get('/fruits', (req, res) => {
+    res.render("fruits", {fruits: fruitMod.getFruit()} )
+})
 app.post('/meteo', (req, res) => {
     const apiKey = "f6f03d4b430d972622542e12b63f852d"
     const city = req.body.ville
@@ -60,4 +65,5 @@ app.post('/meteo', (req, res) => {
 
 app.listen(3000, () => {
     console.log("serveur actif")
+    console.log(fruitMod.getOtherFruits())   
 })

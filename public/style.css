@@ -4,12 +4,13 @@ body {
 }
 
 footer {
-    display: inline-block;
+    /* display: inline-block;
     position: fixed;
     bottom: 0;
     width: 100%;
     margin: 1rem auto;
-    text-align: center;
+    text-align: center; */
+    background-color: rgba(0,0,0,0.5);
 }
 @font-face {
     font-family: 'elgoc';
@@ -17,4 +18,7 @@ footer {
 }
 ° {
     font-family: elgoc;
+}
+.card {
+    max-width: 100px !important;
 }

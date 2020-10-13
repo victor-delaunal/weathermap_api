@@ -29,13 +29,26 @@ app.post('/meteo', (req, res) => {
     const apiKey = "f6f03d4b430d972622542e12b63f852d"
     const city = req.body.ville
     const units = "metric"
+    const tab = []
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`
     https.get(url, response => {
         response.on("data", data => {
         const thisData = JSON.parse(data)
+        const newData = {
+            name: thisData.name,
+            country: thisData.sys.country,
+            desc: thisData.weather[0].description,
+            icon: `https://openweathermap.org/img/wn/${thisData.weather[0].icon}.png`,
+            temp: thisData.main.temp,
+            feelsLike: thisData.main.feels_like,
+            humidity: thisData.main.humidity
+        }
         console.log(thisData)
+        console.log("données carte: ")
+        console.log(newData)
+        tab.push(newData)
         //res.send(`A ${city}, on a un temps ${thisData.weather[0].main}, la température est de ${thisData.main.temp}°C.`)
-        res.render("meteo", {resp: thisData})
+        res.render("meteo", {tab: tab})
         
         // const {name} = thisData
         // const {temp} = thisData.main
